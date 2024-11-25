@@ -103,13 +103,13 @@ class Encoder(Decode,Obfuscator):
             return False
         return newdata
     def ROL(self,data, shift):
-        size = self.arch
+        size = 32
         shift %= size
         remains = data >> (size - shift)
         body = (data << shift) - (remains << size )
         return (body + remains)
     def ROR(self,data, shift):
-        size = self.arch
+        size = 32
         shift %= size
         body = data >> shift
         remains = (data << (size - shift)) - (body << size)

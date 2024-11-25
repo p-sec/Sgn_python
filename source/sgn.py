@@ -114,7 +114,7 @@ def Assemble(arch,asm):
     if arch == 32:
         mode = KS_MODE_32
     elif arch == 64:
-        mode = KS_MODE_32
+        mode = KS_MODE_64
     else:
         SetError("Assemble arch Error!")
 
@@ -122,7 +122,7 @@ def Assemble(arch,asm):
     try:
         encoding,count = ks.asm(asm)
     except KsError:
-        encoding = ""
+        encoding = []
         count = 0;
 
     return encoding,count
